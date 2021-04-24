@@ -22,91 +22,114 @@
 # User 
 ## Information
 ### ENDPOINT       
-    GET /user/{Student_ID} 
+    GET https://secure-reef-62579.herokuapp.com/student/60010105
 ### Prerequisite 
-  - None 
+    - None 
 ### Request :  
-    { 
-        " Student_ID ": "60010105", 
-    } 
+    - None
 ### Response:  
-    { 
-        "Student_ID ": "60010105", 
-        "Name": "Khajohnyos Boonkate", 
-        "Email":"60010105@kmitl.ac.th", 
-        "Student_Year":"4", 
-        "Department_ID":"04", 
-        "Major_ID":"02", 
-        "Faculty_ID":"01", 
-    } 
+    {
+        "student_id": "60010105",
+        "name": "Khajohnyos Boonkate",
+        "email": "60010105@kmitl.ac.th",
+        "student_year": "4",
+        "department_id": "Computer Engineering",
+        "major_id": "Information Engineering",
+        "faculty_id": "Engineering"
+    }
 ## Registered
 ### ENDPOINT
-    GET /user/registered/{Student_ID}
+    GET https://secure-reef-62579.herokuapp.com/student/registered/60010105
 ### Prerequisite 
-  - None 
+    - None 
 ### Request :  
-    { 
-        " Student_ID ": "60010105", 
-    } 
+    - None
 ### Response:  
-    { 
-        "subjects":[
-            ...
-            {
-                "year":"4",
-                "semester:"1",
-                "subjects":[{"course_id":"01236027","course_title":"Project 1","section":"1","credit":"3","type":"credit","Grade":"S+"},...]
-            }
-            ...
-        ] 
-
-    }
+    [
+        {
+            "id": 1,
+            "year": "1",
+            "semester": "1",
+            "student_id": "60010105",
+            "student": {
+                "student_id": "60010105",
+                "name": "Khajohnyos Boonkate",
+                "email": "60010105@kmitl.ac.th",
+                "student_year": "4",
+                "department_id": "Computer Engineering",
+                "major_id": "Information Engineering",
+                "faculty_id": "Engineering"
+            },
+            "courses": [
+                {
+                    "id": 1,
+                    "section": "1",
+                    "grade": 4,
+                    "course_id": "01006028",
+                    "course": {
+                        "course_id": "01006028",
+                        "title": "PRE-ACTIVITIES FOR ENGINEERS",
+                        "credit": 1,
+                        "description": "Participates in activities organized by the Faculty of Engineering of advising and preparing students for succcessful Engineering education and career. Fundamental Laboratory and project in science and technology. ",
+                        "category_id": "02",
+                        "group_id": "07",
+                        "type": "Credit",
+                        "prerequisite": "None",
+                        "status": "true",
+                        "section": null
+                    }
+                },...]
+        },...
+        
+    ]
 ## Unregistered
 ### ENDPOINT
-    GET /user/unregistered/{Student_ID}
+    GET https://secure-reef-62579.herokuapp.com/student/registered/60010105
 ### Prerequisite 
-  - None 
+    - None 
 ### Request :  
-    { 
-        " Student_ID ": "60010105", 
-    } 
+    - None
 ### Response:  
-    { 
-        "subjects":[
-            ...
-            {
-                "year":"4",
-                "semester:"2",
-                "subjects":[{"course_id":"01236150","course_title":"Avanced Web And Mobile Technologies","section":[1,2],"credit":"3","type":"credit"},...]
-            }
-            ...
-        ] 
-
-    }
+    [
+        {
+            "course_id": "01236028",
+            "title": "PROJECT 2",
+            "credit": 3,
+            "description": "Participates in activities organized by the Faculty of Engineering of advising and preparing students for succcessful Engineering education and career. Fundamental Laboratory and project in science and technology. ",
+            "category_id": "02",
+            "group_id": "08",
+            "type": "Credit",
+            "prerequisite": "01236027",
+            "status": "true",
+            "section": null
+        },
+        ....
+    ]
 # Course (รายวิชา) 
 ## Information
 ### ENDPOINT    
-    GET : /Course/{Course_ID}/ 
+    GET : https://secure-reef-62579.herokuapp.com/courses/{course_id}
 ### Prerequisite 
-  - None 
+    - None 
 ### Request :  
-    { 
-        "Course_ID": "01236152", 
-    } 
+    - None
 ### Response:  
-    { 
-        "ID":"01236152", 
-        "Title":"Software Development", 
-        "Credit":"3", 
-        "Description":"Fun Course", 
-        "Category_ID":"02", 
-        "Group_ID":"04", 
-        "Type":"Credit", 
-        "Prerequisite":"None" 
+    {
+        "course_id": "01236152",
+        "title": "SELECTED TOPICS IN SOFTWARE DEVELOPMENT",
+        "credit": 3,
+        "description": "Participates in activities organized by the Faculty of Engineering of advising and preparing students for succcessful Engineering education and career. Fundamental Laboratory and project in science and technology. ",
+        "category_id": "02",
+        "group_id": "10",
+        "type": "Credit",
+        "prerequisite": "none",
+        "status": "true",
+        "section": null
     } 
 ## Course Available
 ### ENDPOINT       
-    GET /course/available/{Student_ID} 
+    Use https://secure-reef-62579.herokuapp.com/student/registered/60010105
+    GET https://secure-reef-62579.herokuapp.com/student/registered/60010105
 ### Prerequisite 
   - None 
 ### Request :  
