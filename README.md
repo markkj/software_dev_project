@@ -128,8 +128,8 @@
     } 
 ## Course Available
 ### ENDPOINT       
-    Use https://secure-reef-62579.herokuapp.com/student/registered/60010105
-    GET https://secure-reef-62579.herokuapp.com/student/registered/60010105
+    Use https://secure-reef-62579.herokuapp.com/student/unregistered/60010105
+    GET https://secure-reef-62579.herokuapp.com/student/unregistered/60010105
 ### Prerequisite 
   - None 
 ### Request :  
